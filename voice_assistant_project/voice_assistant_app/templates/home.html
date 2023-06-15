@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Assistant</title>
+</head>
+<body>
+    <h1>Voice Assistant</h1>
+    <form method="post" action="{% url 'process_voice_command' %}">
+        {% csrf_token %}
+        <button type="submit">Start Listening</button>
+    </form>
+    {% if response %}
+        <p>Response: {{ response }}</p>
+    {% endif %}
+</body>
+</html>
